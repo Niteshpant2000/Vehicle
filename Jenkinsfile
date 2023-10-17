@@ -1,12 +1,16 @@
 pipeline{
     agent any
     environment{
-        staging_server="54.83.79.20"
+       
+        SSH_CREDENTIALS = 'your-ssh-credentials-id'
+        SSH_HOST= " 172.31.18.158"
     }
     stages{
+      
         stage("Deploy to remote"){
+            
             steps{
-                sh 'scp -o StrictHostKeyChecking=no -r ${WORKSPACE}= root@${staging_server}:/var/www/html/vehicle'
+                sh 'scp -o StrictHostKeyChecking=no -r ${WORKSPACE}= root@${SSH_HOST}:/var/www/html/vehicle'
             }
 
         }
