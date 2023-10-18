@@ -12,7 +12,7 @@ pipeline{
                     // Use the 'sshagent' step to set up SSH agent forwarding
                     sshagent(["${SSH_CREDENTIALS}"]) {
                         // Inside this block, you can run SSH commands or scripts
-                        sh "ssh -i /.ssh/id_rsa.pem ${env.SSH_HOST} "
+                        sh "ssh -i ~/.ssh/id_rsa.pem ${env.SSH_HOST} "
                         sh 'scp -o StrictHostKeyChecking=no -r ${WORKSPACE}= root@${SSH_HOST}:/var/www/html/vehicle'
                     }
                 }
