@@ -13,7 +13,8 @@ pipeline{
                     sshagent(["${SSH_CREDENTIALS}"]) {
                         // Inside this block, you can run SSH commands or scripts
                         sh "ssh -i ~/.ssh/id_rsa ec2-user@172.31.18.158"
-                        sh 'scp -v -o -r ${WORKSPACE}= ec2-user@${SSH_HOST}:/var/www/html/vehicle'
+                        sh 'scp -v -r /var/lib/jenkins/workspace/vehicle ec2-user@172.31.25.189:/var/www/html/vehicle
+'
                     }
                 }
             }
