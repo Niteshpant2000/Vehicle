@@ -13,7 +13,7 @@ pipeline{
                     sshagent(["${SSH_CREDENTIALS}"]) {
                         // Inside this block, you can run SSH commands or scripts
                         sh "ssh -i ~/.ssh/id_rsa ec2-user@172.31.18.158"
-                        sh 'scp -o StrictHostKeyChecking=no -r ${WORKSPACE}= root@${SSH_HOST}:/var/www/html/vehicle'
+                        sh 'scp -o StrictHostKeyChecking=no -r ${WORKSPACE}= ec2-user@${SSH_HOST}:/var/www/html/vehicle'
                     }
                 }
             }
