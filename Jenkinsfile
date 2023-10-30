@@ -3,7 +3,7 @@ pipeline{
     environment{
        
         SSH_CREDENTIALS = 'MyPHPProjectKey'
-        SSH_HOST= "172.31.18.158"
+        SSH_HOST= "107.22.156.217"
     }
     stages{
         stage('SSH Access') {
